@@ -185,6 +185,16 @@ public:
     }
 
 private:
+    /*
+    hash_table_
+    0 v1 -> v2 -> ... -> null
+    1 v1 -> v2 -> ... -> null
+    2 v1 -> v2 -> ... -> null
+    ...
+    node is a cell containing key-value pair.
+    bucket is one linked list at a particular index of the hash table.
+    hash table is an array of hash buckets.
+    */
     hash_bucket<K, V> ** hash_table_;
     F hash_func_;
     static constexpr size_t hash_size_default = 1031;
